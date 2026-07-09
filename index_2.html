@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intel2Research | Powering Business Decisions</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -52,12 +56,15 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
+            gap: 1rem;
         }
 
         .logo-container {
+            grid-column: 1;
+            justify-self: start;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -70,7 +77,7 @@
         }
 
         .logo-img {
-            height: 48px;
+            height: 68px;
             width: auto;
             object-fit: contain;
             display: block;
@@ -96,6 +103,35 @@
             color: var(--text-muted);
             letter-spacing: 2px;
             font-weight: 600;
+        }
+
+        .nav-right {
+            grid-column: 3;
+            justify-self: end;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .nav-cta {
+            background: var(--brand-color);
+            color: var(--bg-white);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 14px rgba(204, 75, 59, 0.2);
+        }
+
+        .nav-cta:hover {
+            background: var(--brand-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(204, 75, 59, 0.35);
         }
 
         .menu-toggle {
@@ -130,6 +166,8 @@
         }
 
         nav ul {
+            grid-column: 2;
+            justify-self: center;
             list-style: none;
             display: flex;
             gap: 2rem;
@@ -333,6 +371,24 @@
             font-weight: 700;
         }
 
+        .about-text-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text-header h3 {
+            margin-bottom: 0;
+        }
+
+        .about-icon {
+            width: clamp(44px, 6vw, 56px);
+            height: clamp(44px, 6vw, 56px);
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
         .about-text p {
             margin-bottom: 1.5rem;
             font-size: clamp(0.95rem, 1.8vw, 1.05rem);
@@ -376,6 +432,45 @@
             font-size: clamp(0.85rem, 1.3vw, 0.95rem);
             color: var(--text-muted);
             line-height: 1.6;
+            margin-bottom: 0.6rem;
+        }
+
+        .value-item ul {
+            padding-left: 1.1rem;
+            margin: 0;
+        }
+
+        .value-item li {
+            font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0.3rem;
+        }
+
+        .about-intro {
+            max-width: 900px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .about-intro p {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            line-height: 1.85;
+            color: var(--text-body);
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight {
+            color: var(--brand-color);
+        }
+
+        .subsection-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 1.8rem;
         }
 
         /* Services Section */
@@ -430,6 +525,50 @@
             line-height: 1.7;
         }
 
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-card li {
+            color: var(--text-muted);
+            font-size: clamp(0.9rem, 1.3vw, 0.95rem);
+            line-height: 1.9;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: '•';
+            color: var(--brand-color);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            margin-bottom: 2.5rem;
+        }
+
+        .kpi-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            color: var(--text-body);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .kpi-note strong {
+            color: var(--brand-color);
+        }
+
         /* Expertise Section */
         .expertise {
             padding: clamp(60px, 8vw, 100px) 24px;
@@ -470,6 +609,95 @@
 
         .expertise-item:hover h4 {
             color: var(--bg-white);
+        }
+
+        /* Geographic Footprint */
+        .geo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-top: 3rem;
+        }
+
+        .geo-card {
+            background: var(--bg-light);
+            border: 1px solid var(--brand-light-border);
+            border-radius: 8px;
+            padding: clamp(20px, 3vw, 28px);
+            text-align: center;
+            transition: var(--transition-smooth);
+            outline: none;
+        }
+
+        .geo-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin-bottom: 0.4rem;
+            transition: var(--transition-smooth);
+        }
+
+        .geo-count {
+            display: inline-block;
+            color: var(--brand-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+        }
+
+        .geo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease;
+        }
+
+        .geo-card:hover,
+        .geo-card:focus,
+        .geo-card:focus-within {
+            background: var(--brand-color);
+            border-color: var(--brand-color);
+            box-shadow: 0 12px 30px rgba(204, 75, 59, 0.18);
+        }
+
+        .geo-card:hover h4,
+        .geo-card:focus h4,
+        .geo-card:focus-within h4 {
+            color: var(--bg-white);
+        }
+
+        .geo-card:hover .geo-count,
+        .geo-card:focus .geo-count,
+        .geo-card:focus-within .geo-count {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .geo-card:hover .geo-list,
+        .geo-card:focus .geo-list,
+        .geo-card:focus-within .geo-list {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        .geo-list li {
+            color: var(--bg-white);
+            font-size: clamp(0.85rem, 1.3vw, 0.9rem);
+            line-height: 1.8;
+        }
+
+        .geo-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: clamp(0.9rem, 1.3vw, 0.95rem);
+            color: var(--text-muted);
         }
 
         /* Founder Section */
@@ -547,6 +775,49 @@
             z-index: 1;
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            padding: clamp(60px, 8vw, 100px) 24px;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .testimonial-item {
+            background: var(--bg-white);
+            padding: clamp(24px, 4vw, 32px);
+            border-radius: 6px;
+            border-left: 4px solid var(--brand-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            line-height: 1.85;
+            color: var(--text-body);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: clamp(1rem, 1.8vw, 1.1rem);
+        }
+
+        .testimonial-title {
+            color: var(--brand-color);
+            font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+            font-weight: 600;
+        }
+
         /* Contact Section */
         .contact {
             padding: clamp(60px, 8vw, 100px) 24px;
@@ -559,13 +830,57 @@
             width: 100%;
         }
 
+        /* Quote Banner */
+        .quote-banner {
+            padding: clamp(60px, 8vw, 90px) 24px;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .quote-banner-inner {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .quote-mark {
+            font-family: Georgia, serif;
+            font-size: clamp(3.5rem, 7vw, 5rem);
+            color: var(--brand-color);
+            opacity: 0.35;
+            line-height: 1;
+        }
+
+        .quote-banner blockquote {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+            font-weight: 600;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-top: -0.5rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .quote-banner cite {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--brand-color);
+            font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         .contact-form {
             background: var(--bg-white);
             padding: clamp(24px, 5vw, 45px);
             border-radius: 8px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
             border: 1px solid var(--border-light);
-            margin-top: 2rem;
+            margin-top: 0;
         }
 
         .form-group {
@@ -750,7 +1065,7 @@
                 letter-spacing: clamp(0.1em, 1.2vw, 0.18em);
             }
 
-            .about-content, .founder-content {
+            .about-content, .founder-content, .testimonials-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -771,7 +1086,7 @@
             }
 
             .logo-img {
-                height: 40px;
+                height: 52px;
             }
 
             .logo-title {
@@ -780,6 +1095,15 @@
 
             .menu-toggle {
                 display: flex;
+            }
+
+            .nav-right {
+                gap: 0.7rem;
+            }
+
+            .nav-cta {
+                padding: 8px 14px;
+                font-size: 0.75rem;
             }
 
             nav ul {
@@ -895,7 +1219,7 @@
             }
         }
 
-        .about, .services, .expertise, .founder, .contact {
+        .about, .services, .expertise, .founder, .testimonials, .quote-banner, .contact {
             animation: fadeInUp 0.6s ease-out;
         }
 
@@ -921,18 +1245,22 @@
             <a href="#home" class="logo-container">
                 <img src="logo.png" alt="Intel2Research Logo" class="logo-img">
             </a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <ul id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#founder">Founder</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-right">
+                <a href="case-studies.html" class="nav-cta">Case Studies</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -946,7 +1274,7 @@
                 <a href="#contact" class="cta-button">Get Started</a>
             </div>
             <div class="hero-image">
-                <img src="./home_pic.png" alt="Intel2Research - Committed, Accountable, Curious, Passionate, Boundless" class="hero-img">
+                <img src="images/home-hero.png" alt="Intel2Research - Committed, Accountable, Curious, Passionate, Boundless" class="hero-img">
             </div>
         </div>
     </section>
@@ -955,45 +1283,83 @@
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">Who We Are</h2>
+
+            <div class="about-intro">
+                <p>We synergize the wisdom and experience of seasoned professionals that transcends culture, time and geography.</p>
+                <p>Our clients benefit not just from innovative thinking, but from insights forged over years of navigating complex challenges and delivering measurable impact.</p>
+            </div>
+
+            <div class="values">
+                <div class="value-item">
+                    <h4>Our Mission</h4>
+                    <p><strong>Driven by the goal to help clients stay ahead of the curve</strong></p>
+                    <ul>
+                        <li>Create solutions that uncover multiple perspectives</li>
+                        <li>Synthesize complex findings</li>
+                        <li>Foster shared understanding</li>
+                    </ul>
+                </div>
+                <div class="value-item">
+                    <h4>Strategic Partnership</h4>
+                    <p><strong>Partnerships with online research platforms, with access to large database in MEA and Sub-continent regions</strong></p>
+                    <ul>
+                        <li>Fast, accurate research delivery</li>
+                        <li>Analytically rich insights</li>
+                        <li>Unparalleled market access</li>
+                    </ul>
+                </div>
+                <div class="value-item">
+                    <h4>Data Narratives</h4>
+                    <p><strong>Beneath the surface of complex data lies a treasure-trove of hidden patterns</strong></p>
+                    <ul>
+                        <li>Build meaningful, rich narratives</li>
+                        <li>Uncover consumer decisions - based on values, beliefs, attitudes, and cognitive functions</li>
+                    </ul>
+                </div>
+                <div class="value-item">
+                    <h4>Innovation Think-Tank</h4>
+                    <p><strong>Think-tank that adopts and adapts new age AI tools</strong></p>
+                    <ul>
+                        <li>Trustworthy insights</li>
+                        <li>Deliver timely results</li>
+                        <li>Transformative outcomes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title" style="margin-top: 3.5rem;">Our Forte Is Storytelling</h3>
+            <div class="about-intro">
+                <p>At I2R, we are storytellers who believe that every relevant conversation or dataset has something to tell us. Our forte lies in applying <strong class="highlight">Qualitative and Quantitative research methodologies</strong> and the use of <strong class="highlight">AI Tools</strong> that decode complexity and deliver clarity.</p>
+            </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Our Vision & Mission</h3>
-                    <p>At Intel2Research (I2R), we are storytellers who believe that every relevant conversation or dataset has something to reveal. We create solutions that uncover insights hidden beneath layers of complex data.</p>
-                    
-                    <h3 style="margin-top: 2rem;">Core Pillars</h3>
-                    
-                    <div class="values">
-                        <div class="value-item">
-                            <h4>Strategic Partnership</h4>
-                            <p>Partnerships with reliable panel providers across the Middle East and Africa</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Data Narratives</h4>
-                            <p>Uncovering hidden patterns in complex data to build actionable insights</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Innovation Think-Tank</h4>
-                            <p>Adopting and adapting new-age AI tools for trustworthy insights</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Embracing Technology</h4>
-                            <p>Leveraging digital platforms and consumer intelligence tools</p>
-                        </div>
+                    <div class="about-text-header">
+                        <img src="icon1.png" alt="" class="about-icon">
+                        <h3>Exploring the Depths of Human Behavior</h3>
                     </div>
+                    <p>This is an era where human stories unfold in real time across digital landscapes. Today's event is tomorrow's history—and every tweet, post, and comment is a thread in the tapestry of human experiences. We delve into emerging narratives and latent themes to uncover the deeper motivations and emotional currents that shape human behavior.</p>
                 </div>
                 <div class="about-text">
-                    <h3>Our Values</h3>
-                    <p><strong>Committed • Accountable • Curious</strong></p>
-                    <p>We commit to delivering excellence in every project, maintaining accountability to our clients, and approaching every challenge with curiosity and innovation.</p>
-                    
-                    <p style="margin-top: 2rem;"><strong>Unbiased • Authentic • Passionate</strong></p>
-                    <p>Our research is rooted in unbiased methodologies, authentic insights, and a passion for uncovering the truth that drives business decisions.</p>
+                    <div class="about-text-header">
+                        <img src="icon2.png" alt="" class="about-icon">
+                        <h3>Measuring the Impact of Human Behavior</h3>
+                    </div>
+                    <p>Today's marketers operate in an environment where data isn't just valuable, it is indispensable. We help brands move from passive data collection to active intel generation, bridging the gap between numbers and narratives to build meaningful, responsive connections with their audiences.</p>
+                </div>
+            </div>
 
-                    <p style="margin-top: 2rem;"><strong>Germane • Boundless • Optimistic</strong></p>
-                    <p>We deliver insights that are relevant and timely, think beyond boundaries, and maintain optimism about the power of research to transform businesses.</p>
-
-                    <p style="margin-top: 2rem;"><strong>Symbiotic Collaboration</strong></p>
-                    <p>We work hand-in-hand with our clients, creating symbiotic partnerships where success is mutually achieved through collaborative excellence.</p>
+            <div class="about-content" style="margin-top: 3.5rem;">
+                <div class="about-text">
+                    <h3>Embracing Technology</h3>
+                    <p>Today, consumers are digitally fluent, hyper-connected, unapologetically vocal and use platforms to amplify their voices.</p>
+                    <p>They don't just consume - they interact, influence, and expect reciprocity.</p>
+                    <p>They want brands to listen actively, adapt intelligently, and deliver experiences that feel tailored, not templated, and fuel their desire to act.</p>
+                </div>
+                <div class="about-text">
+                    <h3>Our Strategic Partnerships</h3>
+                    <p>We have partnered with the most reliable panel providers in the Middle East as well as Africa.</p>
+                    <p>Our partners recruitment process is open, inclusive, and rigorously, thus enabling validation of diverse demographic variables to suit different target audience client needs.</p>
+                    <p>This allows for consistency and high-quality data to deliver relevant research insights and power business decisions.</p>
                 </div>
             </div>
         </div>
@@ -1002,39 +1368,37 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Our Services & Expertise</h2>
+            <h2 class="section-title" style="margin-bottom: 1rem;">Our Areas of Remit</h2>
+            <p class="section-subtitle">A Research Kaleidoscope: Breadth of services offered</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Brand Research</h3>
-                    <p>Brand Centric • Brand Imagery • Brand & Ad Tracking</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Comprehensive brand strategy and positioning research to enhance market relevance.</p>
+                    <h3>Brand Centric</h3>
+                    <ul>
+                        <li>Brand Imagery</li>
+                        <li>Brand & Ad Tracking</li>
+                        <li>Product/Packaging Testing</li>
+                        <li>Pricing</li>
+                        <li>Sensory Research</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Customer Insights</h3>
-                    <p>Customer Satisfaction & NPS • Journey Mapping • Experience Research</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Deep dive into customer behavior and satisfaction metrics for optimal experience.</p>
+                    <h3>People Centric</h3>
+                    <ul>
+                        <li>Employee Engagement</li>
+                        <li>Segmentation/Ethnographies</li>
+                        <li>Patient Journey Mapping</li>
+                        <li>Social Research</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Product Excellence</h3>
-                    <p>Product Testing • Packaging Research • Sensory Analysis</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Innovative product development and optimization through rigorous testing.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Market Strategy</h3>
-                    <p>Pricing Research • Segmentation • Ethnographies</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Strategic market positioning and competitive intelligence analysis.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Employee & Culture</h3>
-                    <p>Employee Engagement • Organizational Research</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Foster workplace excellence through employee feedback and engagement studies.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Social Research</h3>
-                    <p>Social Listening • Trend Analysis • Behavioral Insights</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Real-time social intelligence to understand consumer conversations.</p>
+                    <h3>Service Centric</h3>
+                    <ul>
+                        <li>Customer Satisfaction & NPS</li>
+                        <li>Mystery Shopping</li>
+                    </ul>
                 </div>
             </div>
+            <p class="kpi-note"><strong>KPIs & Indices:</strong> We have built Indices that have become 'Standards/Currency' for industry and clients in the region.</p>
 
             <h2 class="section-title" style="margin-top: 4rem;">Industry Expertise</h2>
             <div class="expertise-grid">
@@ -1075,6 +1439,54 @@
                     <h4>And More...</h4>
                 </div>
             </div>
+
+            <h2 class="section-title" style="margin-top: 4rem; margin-bottom: 1rem;">Our Geographic Footprint</h2>
+            <p class="section-subtitle">Markets We Cover — hover a region to view countries</p>
+            <div class="geo-grid">
+                <div class="geo-card" tabindex="0">
+                    <h4>GCC Countries</h4>
+                    <span class="geo-count">6 Markets</span>
+                    <ul class="geo-list">
+                        <li>United Arab Emirates</li>
+                        <li>Saudi Arabia</li>
+                        <li>Kuwait</li>
+                        <li>Qatar</li>
+                        <li>Bahrain</li>
+                        <li>Oman</li>
+                    </ul>
+                </div>
+                <div class="geo-card" tabindex="0">
+                    <h4>North Africa</h4>
+                    <span class="geo-count">5 Markets</span>
+                    <ul class="geo-list">
+                        <li>Egypt</li>
+                        <li>Morocco</li>
+                        <li>Algeria</li>
+                        <li>Tunisia</li>
+                        <li>Libya</li>
+                    </ul>
+                </div>
+                <div class="geo-card" tabindex="0">
+                    <h4>Levant & Middle East</h4>
+                    <span class="geo-count">5 Markets</span>
+                    <ul class="geo-list">
+                        <li>Jordan</li>
+                        <li>Lebanon</li>
+                        <li>Syria</li>
+                        <li>Iraq</li>
+                        <li>Iran</li>
+                    </ul>
+                </div>
+                <div class="geo-card" tabindex="0">
+                    <h4>Sub-Continent</h4>
+                    <span class="geo-count">2 Markets</span>
+                    <ul class="geo-list">
+                        <li>Pakistan</li>
+                        <li>India</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="geo-note">Other markets include African countries like Nigeria, Kenya, Zambia and Turkey in the EU.</p>
         </div>
     </section>
 
@@ -1094,13 +1506,41 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Voices That Resonate Our Story</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"During my time at REDTAG, Suhail led a biannual research program across the GCC. His work helped us track key KPIs such as TOMA, NPS, influencer and celebrity impact, and overall customer satisfaction—across both tangible and intangible brand touchpoints. Our marketing ROI improved significantly, with certain initiatives delivering up to 10X returns. His ability to turn data into insights guided high-impact decisions—shifting media investments, launching a successful celebrity collection, and building a customer engagement program directly tied to measurable topline growth."</p>
+                    <div class="testimonial-author">Pranav Shankar</div>
+                    <div class="testimonial-title">Former Head of Marketing, REDTAG</div>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Collaborating with Suhail and his team on strategic studies such as 'Understanding the Arab Digital Generation' and 'Arab Generation Divide' combined analytical rigor with forward-looking insights. The foresight generated through these studies was well-received policy makers and industry leaders across the region. Presenting the 'Understanding the Arab Digital Generation' findings alongside Suhail at the ESOMAR conference in Dubai marked a particularly memorable milestone."</p>
+                    <div class="testimonial-author">Hatem Samman</div>
+                    <div class="testimonial-title">Former Director, Booz & Co</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Banner -->
+    <section class="quote-banner">
+        <div class="quote-banner-inner">
+            <div class="quote-mark">&ldquo;</div>
+            <blockquote>To raise new questions, new possibilities, to regard old problems from a new angle, requires creative imagination and marks real advance in science.</blockquote>
+            <cite>— Albert Einstein</cite>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-content">
             <h2 class="section-title">Let's Connect</h2>
             <div class="contact-form">
                 <div class="form-message" id="formMessage"></div>
-                
+
                 <form id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
@@ -1151,13 +1591,6 @@
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
-
-            <div style="margin-top: 4rem; text-align: center; color: #666;">
-                <h3 style="font-family: 'Montserrat', sans-serif; color: #1a3a52; margin-bottom: 1rem;">Contact Information</h3>
-                <p style="margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; font-weight: 600;">Email: suhail.shaikh@intel2research.com</p>
-                <p style="margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif;">Web: www.intel2research.net</p>
-                <p style="font-family: 'Montserrat', sans-serif;">Compass Building, Al Shohada Road, Al Hamra Industrial Zone-FZ, Ras Al Khaimah, UAE</p>
-            </div>
         </div>
     </section>
 
@@ -1180,7 +1613,7 @@
                     <h4>Get in Touch</h4>
                     <p>Email: <a href="mailto:suhail.shaikh@intel2research.com">suhail.shaikh@intel2research.com</a></p>
                     <p>Web: <a href="https://www.intel2research.net" target="_blank">www.intel2research.net</a></p>
-                    <p>Location: Ras Al Khaimah, UAE</p>
+                    <p>Location: Compass Building, Al Shohada Road, Al Hamra Industrial Zone-FZ, Ras Al Khaimah, UAE</p>
                 </div>
             </div>
             <div class="footer-bottom">
