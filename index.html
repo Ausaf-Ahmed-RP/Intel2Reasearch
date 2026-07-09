@@ -1274,7 +1274,7 @@
                 <a href="#contact" class="cta-button">Get Started</a>
             </div>
             <div class="hero-image">
-                <img src="./home-hero.png" alt="Intel2Research - Committed, Accountable, Curious, Passionate, Boundless" class="hero-img">
+                <img src="images/home-hero.png" alt="Intel2Research - Committed, Accountable, Curious, Passionate, Boundless" class="hero-img">
             </div>
         </div>
     </section>
@@ -1625,7 +1625,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         // Initialize EmailJS (free service, no credit card needed)
-        emailjs.init("YOUR_EMAILJS_KEY"); // We'll set this up below
+        emailjs.init("qvI8X-Tz05TGDisKz");
 
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
@@ -1660,7 +1660,7 @@
 
             // Gather form data
             const templateParams = {
-                to_email: 'ausfahmed810200@gmail.com',
+                to_email: 'suhail.shaikh@intel2research.com',
                 from_name: document.getElementById('name').value,
                 from_email: document.getElementById('email').value,
                 company: document.getElementById('company').value || 'Not provided',
@@ -1673,8 +1673,8 @@
             try {
                 // Send email using EmailJS
                 const response = await emailjs.send(
-                    'service_contact_form',  // Service ID
-                    'template_contact_form',  // Template ID
+                    'service_5csnefh',  // Service ID
+                    'template_99p3oz4',  // Template ID
                     templateParams
                 );
 
