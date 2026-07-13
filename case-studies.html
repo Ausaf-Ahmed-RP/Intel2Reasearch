@@ -17,15 +17,17 @@
         }
 
         :root {
-            --brand-color: #cc4b3b;
-            --brand-hover: #b03829;
-            --brand-light: #fef8f7;
-            --brand-light-border: rgba(204, 75, 59, 0.1);
+            --brand-color: #002c4f;
+            --brand-hover: #004277;
+            --brand-light: #f4f7fa;
+            --brand-light-border: rgba(0, 44, 79, 0.08);
+            --brand-accent: #c59b27;
+            --brand-accent-hover: #a8811d;
             --text-dark: #111827;
             --text-body: #374151;
             --text-muted: #6b7280;
             --bg-white: #ffffff;
-            --bg-light: #fef8f7;
+            --bg-light: #f4f7fa;
             --border-light: #f3f4f6;
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -103,13 +105,13 @@
             text-decoration: none;
             white-space: nowrap;
             transition: var(--transition-smooth);
-            box-shadow: 0 4px 14px rgba(204, 75, 59, 0.2);
+            box-shadow: 0 4px 14px rgba(0, 44, 79, 0.15);
         }
 
         .nav-cta:hover {
             background: var(--brand-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(204, 75, 59, 0.35);
+            box-shadow: 0 8px 20px rgba(0, 44, 79, 0.25);
         }
 
         .nav-cta.active {
@@ -291,7 +293,7 @@
 
         .case-study-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(204, 75, 59, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 44, 79, 0.08);
         }
 
         .cs-client {
@@ -382,7 +384,7 @@
         }
 
         .footer-section a:hover {
-            color: #e05e4e;
+            color: var(--brand-accent);
         }
 
         .footer-bottom {
@@ -504,7 +506,7 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index_2.html#home" class="logo-container">
+            <a href="index.html#home" class="logo-container">
                 <img src="logo.png" alt="Intel2Research Logo" class="logo-img">
             </a>
             <ul id="navMenu">
@@ -613,10 +615,10 @@
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <p><a href="index_2.html#home">Home</a></p>
-                    <p><a href="index_2.html#about">About Us</a></p>
-                    <p><a href="index_2.html#services">Services</a></p>
-                    <p><a href="index_2.html#contact">Contact</a></p>
+                    <p><a href="index.html#home">Home</a></p>
+                    <p><a href="index.html#about">About Us</a></p>
+                    <p><a href="index.html#services">Services</a></p>
+                    <p><a href="index.html#contact">Contact</a></p>
                 </div>
                 <div class="footer-section">
                     <h4>Get in Touch</h4>
