@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,16 +20,18 @@
         }
 
         :root {
-            --brand-color: #cc4b3b;
-            --brand-hover: #b03829;
-            --brand-light: #fef8f7;
-            --brand-light-border: rgba(204, 75, 59, 0.1);
+            --brand-color: #002c4f;
+            --brand-hover: #004277;
+            --brand-light: #f4f7fa;
+            --brand-light-border: rgba(0, 44, 79, 0.08);
+            --brand-accent: #c59b27;
+            --brand-accent-hover: #a8811d;
             --text-dark: #111827;
             --text-body: #374151;
             --text-muted: #6b7280;
             --bg-white: #ffffff;
-            --bg-light: #fef8f7;
-            --border-light: #f3f4f6;
+            --bg-light: #ffffff;
+            --border-light: #ffffff;
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -125,13 +130,13 @@
             text-decoration: none;
             white-space: nowrap;
             transition: var(--transition-smooth);
-            box-shadow: 0 4px 14px rgba(204, 75, 59, 0.2);
+            box-shadow: 0 4px 14px rgba(0, 44, 79, 0.15);
         }
 
         .nav-cta:hover {
             background: var(--brand-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(204, 75, 59, 0.35);
+            box-shadow: 0 8px 20px rgba(0, 44, 79, 0.25);
         }
 
         .menu-toggle {
@@ -227,6 +232,7 @@
             position: relative;
             z-index: 1;
             width: 100%;
+
         }
 
         .hero-image {
@@ -250,15 +256,38 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(204,75,59,0.04)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,44,79,0.04)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
             opacity: 0.8;
             z-index: 0;
         }
 
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 65%;
+            background-image: url('hero back-2.png');
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: contain;
+            opacity: 0.9;
+            z-index: 0;
+            pointer-events: none;
+        }
+
         .hero-content {
-            text-align: left;
+            text-align: center;
             width: 100%;
             min-width: 0;
+        }
+
+        .hero-brand-group {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
         }
 
         .hero h1 {
@@ -276,13 +305,14 @@
         .hero-subtitle {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(0.55rem, 1.4vw + 0.35rem, 0.95rem);
-            margin-bottom: 2rem;
-            color: #000000;
-            font-weight: 300;
+            color: var(--brand-accent);
+            font-weight: 600;
             letter-spacing: clamp(0.12em, 0.8vw, 0.22em);
             text-transform: uppercase;
             white-space: nowrap;
             line-height: 1.2;
+            text-align: center;
+            width: 100%;
         }
 
         .hero p {
@@ -307,13 +337,13 @@
             text-decoration: none;
             display: inline-block;
             letter-spacing: 1px;
-            box-shadow: 0 4px 14px rgba(204, 75, 59, 0.2);
+            box-shadow: 0 4px 14px rgba(0, 44, 79, 0.15);
         }
 
         .cta-button:hover {
             background: var(--brand-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(204, 75, 59, 0.35);
+            box-shadow: 0 8px 20px rgba(0, 44, 79, 0.25);
         }
 
         .cta-button:active {
@@ -435,7 +465,7 @@
             background: var(--brand-color);
             border-color: var(--brand-color);
             color: var(--bg-white);
-            box-shadow: 0 8px 20px rgba(204, 75, 59, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 44, 79, 0.2);
         }
 
         .tab-panels {
@@ -459,6 +489,7 @@
                 opacity: 0;
                 transform: translateY(14px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -486,6 +517,168 @@
             }
         }
 
+        /* Forte side-by-side cards */
+        .forte-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .forte-card {
+            background: var(--bg-white);
+            padding: clamp(20px, 3vw, 28px);
+            border-radius: 6px;
+            border-left: 4px solid var(--brand-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border-top: 1px solid rgba(0, 0, 0, 0.01);
+            border-right: 1px solid rgba(0, 0, 0, 0.01);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.01);
+            transition: var(--transition-smooth);
+        }
+
+        .forte-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 44, 79, 0.06);
+        }
+
+        .forte-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .forte-card-icon {
+            width: clamp(36px, 5vw, 48px);
+            height: clamp(36px, 5vw, 48px);
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .forte-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--brand-color);
+            font-weight: 700;
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            margin: 0;
+        }
+
+        .forte-card p {
+            font-size: clamp(0.9rem, 1.4vw, 0.98rem);
+            line-height: 1.8;
+            color: var(--text-body);
+        }
+
+        /* Lower tabs strip */
+        .forte-tabs-lower {
+            margin-top: 0;
+        }
+
+        /* About Pillars — Embracing Technology & Strategic Partnerships */
+        .about-pillars {
+            margin-top: 4rem;
+            padding-top: 3.5rem;
+            border-top: 1px solid var(--brand-light-border);
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .about-pillar {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: clamp(2rem, 5vw, 5rem);
+            align-items: start;
+            padding: clamp(2.5rem, 4vw, 3.5rem) 0;
+            border-bottom: 1px solid var(--brand-light-border);
+        }
+
+        .about-pillar:last-child {
+            border-bottom: none;
+        }
+
+        .pillar-left {
+            position: sticky;
+            top: 100px;
+        }
+
+        .pillar-tag {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--brand-accent);
+            margin-bottom: 1rem;
+        }
+
+        .pillar-left h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.4rem, 2.8vw, 2rem);
+            font-weight: 800;
+            color: var(--brand-color);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .pillar-right {
+            padding-top: 0.3rem;
+        }
+
+        .pillar-right p {
+            font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+            line-height: 1.85;
+            color: var(--text-body);
+            margin-bottom: 1.2rem;
+        }
+
+        .pillar-right p:last-child {
+            margin-bottom: 0;
+        }
+
+        .pillar-right ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.2rem 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .pillar-right ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: clamp(0.9rem, 1.4vw, 0.98rem);
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        .pillar-right ul li::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            min-width: 6px;
+            border-radius: 50%;
+            background: var(--brand-color);
+            margin-top: 0.52em;
+        }
+
+        @media (max-width: 768px) {
+            .about-pillar {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .pillar-left {
+                position: static;
+            }
+        }
+
         .about-text p {
             margin-bottom: 1.5rem;
             font-size: clamp(0.95rem, 1.8vw, 1.05rem);
@@ -506,15 +699,15 @@
             border-radius: 6px;
             border-left: 4px solid var(--brand-color);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            border-top: 1px solid rgba(0,0,0,0.01);
-            border-right: 1px solid rgba(0,0,0,0.01);
-            border-bottom: 1px solid rgba(0,0,0,0.01);
+            border-top: 1px solid rgba(0, 0, 0, 0.01);
+            border-right: 1px solid rgba(0, 0, 0, 0.01);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.01);
             transition: var(--transition-smooth);
         }
 
         .value-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(204, 75, 59, 0.08);
+            box-shadow: 0 8px 24px rgba(0, 44, 79, 0.06);
         }
 
         .value-item h4 {
@@ -558,7 +751,7 @@
         }
 
         .highlight {
-            color: var(--brand-color);
+            color: var(--brand-accent);
         }
 
         .subsection-title {
@@ -596,7 +789,7 @@
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(204, 75, 59, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 44, 79, 0.08);
         }
 
         .service-card h3 {
@@ -674,25 +867,56 @@
 
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: clamp(1rem, 2vw, 1.5rem);
             margin-top: 3.5rem;
         }
 
         .expertise-item {
             background: var(--bg-light);
-            padding: clamp(18px, 3vw, 24px);
+            padding: clamp(20px, 3vw, 28px) clamp(14px, 2vw, 20px);
             text-align: center;
-            border-radius: 6px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
             transition: var(--transition-smooth);
             border: 1px solid var(--brand-light-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: default;
         }
 
         .expertise-item:hover {
-            box-shadow: 0 8px 24px rgba(204, 75, 59, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 44, 79, 0.12);
             background: var(--brand-color);
             border-color: var(--brand-color);
+            transform: translateY(-3px);
+        }
+
+        .expertise-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-color);
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+
+        .expertise-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .expertise-item:hover .expertise-icon {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .expertise-item h4 {
@@ -700,8 +924,9 @@
             color: var(--text-dark);
             margin: 0;
             font-weight: 600;
-            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            font-size: clamp(0.85rem, 1.4vw, 0.95rem);
             transition: var(--transition-smooth);
+            line-height: 1.3;
         }
 
         .expertise-item:hover h4 {
@@ -761,7 +986,7 @@
         .geo-card:focus-within {
             background: var(--brand-color);
             border-color: var(--brand-color);
-            box-shadow: 0 12px 30px rgba(204, 75, 59, 0.18);
+            box-shadow: 0 12px 30px rgba(0, 44, 79, 0.12);
         }
 
         .geo-card:hover h4,
@@ -839,7 +1064,7 @@
         }
 
         .founder-image {
-            background: linear-gradient(135deg, var(--brand-color) 0%, #e05e4e 100%);
+            background: linear-gradient(135deg, var(--brand-color) 0%, #00457a 100%);
             border-radius: 8px;
             padding: clamp(20px, 5vw, 40px);
             text-align: center;
@@ -850,7 +1075,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 12px 36px rgba(204, 75, 59, 0.15);
+            box-shadow: 0 12px 36px rgba(0, 44, 79, 0.12);
             position: relative;
             overflow: hidden;
         }
@@ -858,7 +1083,10 @@
         .founder-image::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/></svg>');
             background-size: cover;
             opacity: 0.3;
@@ -999,7 +1227,9 @@
             font-size: clamp(0.85rem, 1.3vw, 0.95rem);
         }
 
-        input, textarea, select {
+        input,
+        textarea,
+        select {
             width: 100%;
             padding: clamp(10px, 2vw, 12px);
             border: 2px solid #e5e7eb;
@@ -1010,10 +1240,12 @@
             color: var(--text-body);
         }
 
-        input:focus, textarea:focus, select:focus {
+        input:focus,
+        textarea:focus,
+        select:focus {
             outline: none;
             border-color: var(--brand-color);
-            box-shadow: 0 0 0 3px rgba(204, 75, 59, 0.1);
+            box-shadow: 0 0 0 3px rgba(0, 44, 79, 0.08);
         }
 
         textarea {
@@ -1039,13 +1271,13 @@
             letter-spacing: 1px;
             width: 100%;
             margin-top: 1rem;
-            box-shadow: 0 4px 14px rgba(204, 75, 59, 0.2);
+            box-shadow: 0 4px 14px rgba(0, 44, 79, 0.15);
         }
 
         .submit-btn:hover {
             background: var(--brand-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(204, 75, 59, 0.35);
+            box-shadow: 0 8px 20px rgba(0, 44, 79, 0.25);
         }
 
         .submit-btn:active {
@@ -1121,7 +1353,7 @@
         }
 
         .footer-section a:hover {
-            color: #e05e4e;
+            color: var(--brand-accent);
         }
 
         .footer-bottom {
@@ -1162,7 +1394,9 @@
                 letter-spacing: clamp(0.1em, 1.2vw, 0.18em);
             }
 
-            .about-content, .founder-content, .testimonials-grid {
+            .about-content,
+            .founder-content,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -1217,7 +1451,7 @@
                 transition: max-height 0.3s ease;
                 padding: 0;
                 border-bottom: 1px solid var(--border-light);
-                box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
             }
 
             nav ul.active {
@@ -1253,6 +1487,10 @@
             }
 
             .values {
+                grid-template-columns: 1fr;
+            }
+
+            .forte-cards {
                 grid-template-columns: 1fr;
             }
 
@@ -1330,13 +1568,20 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .about, .services, .expertise, .founder, .testimonials, .quote-banner, .contact {
+        .about,
+        .services,
+        .expertise,
+        .founder,
+        .testimonials,
+        .quote-banner,
+        .contact {
             animation: fadeInUp 0.6s ease-out;
         }
 
@@ -1352,10 +1597,13 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="nav-container">
@@ -1385,13 +1633,12 @@
     <section class="hero" id="home">
         <div class="hero-wrapper">
             <div class="hero-content">
-                <h1>Intel2Research</h1>
-                <div class="hero-subtitle">Powering Business Decisions</div>
-                <p>We synergize the wisdom and experience of seasoned professionals that transcends culture, time, and geography. Driven by cutting-edge research methodologies and strategic insights, we empower businesses to stay ahead of the curve.</p>
+                <div class="hero-brand-group">
+                    <h1>Intel2Research</h1>
+                    <div class="hero-subtitle">Powering Business Decisions</div>
+                </div>
                 <a href="#contact" class="cta-button">Get Started</a>
             </div>
-            <div class="hero-image">
-                <img src="./home-hero.png" alt="Intel2Research - Committed, Accountable, Curious, Passionate, Boundless" class="hero-img">
             </div>
         </div>
     </section>
@@ -1402,8 +1649,10 @@
             <h2 class="section-title">Who We Are</h2>
 
             <div class="about-intro">
-                <p>We synergize the wisdom and experience of seasoned professionals that transcends culture, time and geography.</p>
-                <p>Our clients benefit not just from innovative thinking, but from insights forged over years of navigating complex challenges and delivering measurable impact.</p>
+                <p>We synergize the wisdom and experience of seasoned professionals that transcends culture, time and
+                    geography.</p>
+                <p>Our clients benefit not just from innovative thinking, but from insights forged over years of
+                    navigating complex challenges and delivering measurable impact.</p>
             </div>
 
             <div class="values">
@@ -1418,7 +1667,8 @@
                 </div>
                 <div class="value-item">
                     <h4>Strategic Partnership</h4>
-                    <p><strong>Partnerships with online research platforms, with access to large database in MEA and Sub-continent regions</strong></p>
+                    <p><strong>Partnerships with online research platforms, with access to large database in MEA and
+                            Sub-continent regions</strong></p>
                     <ul>
                         <li>Fast, accurate research delivery</li>
                         <li>Analytically rich insights</li>
@@ -1430,7 +1680,8 @@
                     <p><strong>Beneath the surface of complex data lies a treasure-trove of hidden patterns</strong></p>
                     <ul>
                         <li>Build meaningful, rich narratives</li>
-                        <li>Uncover consumer decisions - based on values, beliefs, attitudes, and cognitive functions</li>
+                        <li>Uncover consumer decisions - based on values, beliefs, attitudes, and cognitive functions
+                        </li>
                     </ul>
                 </div>
                 <div class="value-item">
@@ -1446,49 +1697,77 @@
 
             <h3 class="subsection-title" style="margin-top: 3.5rem;">Our Forte Is Storytelling</h3>
             <div class="about-intro">
-                <p>At I2R, we are storytellers who believe that every relevant conversation or dataset has something to tell us. Our forte lies in applying <strong class="highlight">Qualitative and Quantitative research methodologies</strong> and the use of <strong class="highlight">AI Tools</strong> that decode complexity and deliver clarity.</p>
+                <p>At I2R, we are storytellers who believe that every relevant conversation or dataset has something to
+                    tell us. Our forte lies in applying <strong class="highlight">Qualitative and Quantitative research
+                        methodologies</strong> and the use of <strong class="highlight">AI Tools</strong> that decode
+                    complexity and deliver clarity.</p>
             </div>
-            <div class="forte-tabs">
-                <div class="tab-nav" role="tablist">
-                    <button class="tab-btn active" data-tab="0" role="tab" aria-selected="true">
-                        <img src="icon1.png" alt="" class="tab-icon">
-                        <span>Exploring Human Behavior</span>
-                    </button>
-                    <button class="tab-btn" data-tab="1" role="tab" aria-selected="false">
-                        <img src="icon2.png" alt="" class="tab-icon">
-                        <span>Measuring Impact</span>
-                    </button>
-                    <button class="tab-btn" data-tab="2" role="tab" aria-selected="false">
-                        <img src="icon-tech.png" alt="" class="tab-icon">
-                        <span>Embracing Technology</span>
-                    </button>
-                    <button class="tab-btn" data-tab="3" role="tab" aria-selected="false">
-                        <img src="icon-partnership.png" alt="" class="tab-icon">
-                        <span>Strategic Partnerships</span>
-                    </button>
+            <!-- Side-by-side forte cards: Exploring Human Behavior + Measuring Impact -->
+            <div class="forte-cards">
+                <div class="forte-card">
+                    <div class="forte-card-header">
+                        <img src="icon1-blue.png" alt="" class="forte-card-icon">
+                        <h4>Exploring Human Behavior</h4>
+                    </div>
+                    <p>This is an era where human stories unfold in real time across digital landscapes. Today's
+                        event is tomorrow's history—and every tweet, post, and comment is a thread in the tapestry
+                        of human experiences. We delve into emerging narratives and latent themes to uncover the
+                        deeper motivations and emotional currents that shape human behavior.</p>
                 </div>
-                <div class="tab-panels">
-                    <div class="tab-panel active" data-panel="0">
-                        <h3>Exploring the Depths of Human Behavior</h3>
-                        <p>This is an era where human stories unfold in real time across digital landscapes. Today's event is tomorrow's history—and every tweet, post, and comment is a thread in the tapestry of human experiences. We delve into emerging narratives and latent themes to uncover the deeper motivations and emotional currents that shape human behavior.</p>
+                <div class="forte-card">
+                    <div class="forte-card-header">
+                        <img src="icon2-blue.png" alt="" class="forte-card-icon">
+                        <h4>Measuring Impact</h4>
                     </div>
-                    <div class="tab-panel" data-panel="1">
-                        <h3>Measuring the Impact of Human Behavior</h3>
-                        <p>Today's marketers operate in an environment where data isn't just valuable, it is indispensable. We help brands move from passive data collection to active intel generation, bridging the gap between numbers and narratives to build meaningful, responsive connections with their audiences.</p>
+                    <p>Today's marketers operate in an environment where data isn't just valuable, it is
+                        indispensable. We help brands move from passive data collection to active intel generation,
+                        bridging the gap between numbers and narratives to build meaningful, responsive connections
+                        with their audiences.</p>
+                </div>
+            </div>
+
+            <!-- Embracing Technology + Strategic Partnerships — separate pillar sub-section -->
+            <div class="about-pillars">
+
+                <div class="about-pillar">
+                    <div class="pillar-left">
+                        <span class="pillar-tag">Innovation</span>
+                        <h3>Embracing<br>Technology</h3>
                     </div>
-                    <div class="tab-panel" data-panel="2">
-                        <h3>Embracing Technology</h3>
-                        <p>Today, consumers are digitally fluent, hyper-connected, unapologetically vocal and use platforms to amplify their voices.</p>
-                        <p>They don't just consume - they interact, influence, and expect reciprocity.</p>
-                        <p>They want brands to listen actively, adapt intelligently, and deliver experiences that feel tailored, not templated, and fuel their desire to act.</p>
-                    </div>
-                    <div class="tab-panel" data-panel="3">
-                        <h3>Our Strategic Partnerships</h3>
-                        <p>We have partnered with the most reliable panel providers in the Middle East as well as Africa.</p>
-                        <p>Our partners recruitment process is open, inclusive, and rigorously, thus enabling validation of diverse demographic variables to suit different target audience client needs.</p>
-                        <p>This allows for consistency and high-quality data to deliver relevant research insights and power business decisions.</p>
+                    <div class="pillar-right">
+                        <p>Today, consumers are digitally fluent, hyper-connected, and unapologetically vocal — using
+                            every platform to amplify their voices. They don't just consume; they interact, influence,
+                            and expect reciprocity.</p>
+                        <p>They want brands to listen actively, adapt intelligently, and deliver experiences that feel
+                            tailored — not templated — and fuel their desire to act. At I2R, we harness cutting-edge AI
+                            tools to decode these signals and translate them into actionable intelligence.</p>
+                        <ul>
+                            <li>AI-powered sentiment analysis and trend detection</li>
+                            <li>Real-time consumer signal monitoring</li>
+                            <li>Predictive modelling for market shifts</li>
+                        </ul>
                     </div>
                 </div>
+
+                <div class="about-pillar">
+                    <div class="pillar-left">
+                        <span class="pillar-tag">Reach &amp; Scale</span>
+                        <h3>Strategic<br>Partnerships</h3>
+                    </div>
+                    <div class="pillar-right">
+                        <p>We have partnered with the most reliable panel providers across the Middle East and Africa —
+                            giving our clients unparalleled access to diverse, verified audiences at scale.</p>
+                        <p>Our partners' recruitment process is open, inclusive, and rigorous, enabling validation of
+                            diverse demographic variables to suit every target audience profile — from mass-market
+                            consumers to niche professional segments.</p>
+                        <ul>
+                            <li>Fast, accurate research delivery</li>
+                            <li>Analytically rich, regionally grounded insights</li>
+                            <li>Unparalleled market access across MEA &amp; Sub-continent</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1526,44 +1805,133 @@
                     </ul>
                 </div>
             </div>
-            <p class="kpi-note"><strong>KPIs & Indices:</strong> We have built Indices that have become 'Standards/Currency' for industry and clients in the region.</p>
+            <p class="kpi-note"><strong>KPIs & Indices:</strong> We have built Indices that have become
+                'Standards/Currency' for industry and clients in the region.</p>
 
             <h2 class="section-title" style="margin-top: 4rem;">Industry Expertise</h2>
             <div class="expertise-grid">
+                <!-- Automotive -->
                 <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 17H3a2 2 0 0 1-2-2v-4l2-5h14l2 5v4a2 2 0 0 1-2 2h-2" />
+                            <circle cx="7.5" cy="17.5" r="2.5" />
+                            <circle cx="16.5" cy="17.5" r="2.5" />
+                            <path d="M5 9h14" />
+                        </svg>
+                    </div>
                     <h4>Automotive</h4>
                 </div>
+                <!-- Banking & Finance -->
                 <div class="expertise-item">
-                    <h4>Banking & Finance</h4>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                    </div>
+                    <h4>Banking &amp; Finance</h4>
                 </div>
+                <!-- Healthcare -->
                 <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
                     <h4>Healthcare</h4>
                 </div>
+                <!-- FMCG -->
                 <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                    </div>
                     <h4>FMCG</h4>
                 </div>
+                <!-- E-Commerce -->
                 <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                    </div>
                     <h4>E-Commerce</h4>
                 </div>
+                <!-- Media & Entertainment -->
                 <div class="expertise-item">
-                    <h4>Media & Entertainment</h4>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <polygon points="23 7 16 12 23 17 23 7" />
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                        </svg>
+                    </div>
+                    <h4>Media &amp; Entertainment</h4>
                 </div>
+                <!-- Hospitality & Tourism -->
                 <div class="expertise-item">
-                    <h4>Hospitality & Tourism</h4>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <path d="M9 22V12h6v10" />
+                            <circle cx="12" cy="5" r="1" />
+                        </svg>
+                    </div>
+                    <h4>Hospitality &amp; Tourism</h4>
                 </div>
+                <!-- Retail & Fashion -->
                 <div class="expertise-item">
-                    <h4>Retail & Fashion</h4>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                            <line x1="7" y1="7" x2="7.01" y2="7" />
+                        </svg>
+                    </div>
+                    <h4>Retail &amp; Fashion</h4>
                 </div>
+                <!-- Telecom -->
                 <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
+                        </svg>
+                    </div>
                     <h4>Telecom</h4>
                 </div>
+                <!-- Oil & Gas -->
                 <div class="expertise-item">
-                    <h4>Oil & Gas</h4>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z" />
+                            <circle cx="12" cy="9" r="2.5" />
+                        </svg>
+                    </div>
+                    <h4>Oil &amp; Gas</h4>
                 </div>
+                <!-- Insurance & Fintech -->
                 <div class="expertise-item">
-                    <h4>Insurance & Fintech</h4>
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h4>Insurance &amp; Fintech</h4>
                 </div>
+                <!-- And More -->
                 <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="16" />
+                            <line x1="8" y1="12" x2="16" y2="12" />
+                        </svg>
+                    </div>
                     <h4>And More...</h4>
                 </div>
             </div>
@@ -1614,7 +1982,8 @@
                     </ul>
                 </div>
             </div>
-            <p class="geo-note">Other markets include African countries like Nigeria, Kenya, Zambia and Turkey in the EU.</p>
+            <p class="geo-note">Other markets include African countries like Nigeria, Kenya, Zambia and Turkey in the
+                EU.</p>
         </div>
     </section>
 
@@ -1627,9 +1996,14 @@
             <div class="founder-info">
                 <h3>Suhail A. Shaikh</h3>
                 <div class="founder-title">Founder & Research Leader</div>
-                <p>A senior practitioner with 30+ years of Marketing Research & Insights expertise, Suhail has worked across diverse industries and geographies, building Intel2Research on a foundation of strategic excellence and data-driven insights.</p>
-                <p>Suhail's vision is to create a research partner that goes beyond conventional methodologies—one that tells stories within data, uncovers hidden patterns, and transforms insights into actionable business strategies.</p>
-                <p>His leadership has established I2R as a trusted research partner for leading global and regional brands, helping them navigate complex markets with confidence and clarity.</p>
+                <p>A senior practitioner with 30+ years of Marketing Research & Insights expertise, Suhail has worked
+                    across diverse industries and geographies, building Intel2Research on a foundation of strategic
+                    excellence and data-driven insights.</p>
+                <p>Suhail's vision is to create a research partner that goes beyond conventional methodologies—one that
+                    tells stories within data, uncovers hidden patterns, and transforms insights into actionable
+                    business strategies.</p>
+                <p>His leadership has established I2R as a trusted research partner for leading global and regional
+                    brands, helping them navigate complex markets with confidence and clarity.</p>
             </div>
         </div>
     </section>
@@ -1640,12 +2014,23 @@
             <h2 class="section-title">Voices That Resonate Our Story</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-item">
-                    <p class="testimonial-quote">"During my time at REDTAG, Suhail led a biannual research program across the GCC. His work helped us track key KPIs such as TOMA, NPS, influencer and celebrity impact, and overall customer satisfaction—across both tangible and intangible brand touchpoints. Our marketing ROI improved significantly, with certain initiatives delivering up to 10X returns. His ability to turn data into insights guided high-impact decisions—shifting media investments, launching a successful celebrity collection, and building a customer engagement program directly tied to measurable topline growth."</p>
+                    <p class="testimonial-quote">"During my time at REDTAG, Suhail led a biannual research program
+                        across the GCC. His work helped us track key KPIs such as TOMA, NPS, influencer and celebrity
+                        impact, and overall customer satisfaction—across both tangible and intangible brand touchpoints.
+                        Our marketing ROI improved significantly, with certain initiatives delivering up to 10X returns.
+                        His ability to turn data into insights guided high-impact decisions—shifting media investments,
+                        launching a successful celebrity collection, and building a customer engagement program directly
+                        tied to measurable topline growth."</p>
                     <div class="testimonial-author">Pranav Shankar</div>
                     <div class="testimonial-title">Former Head of Marketing, REDTAG</div>
                 </div>
                 <div class="testimonial-item">
-                    <p class="testimonial-quote">"Collaborating with Suhail and his team on strategic studies such as 'Understanding the Arab Digital Generation' and 'Arab Generation Divide' combined analytical rigor with forward-looking insights. The foresight generated through these studies was well-received policy makers and industry leaders across the region. Presenting the 'Understanding the Arab Digital Generation' findings alongside Suhail at the ESOMAR conference in Dubai marked a particularly memorable milestone."</p>
+                    <p class="testimonial-quote">"Collaborating with Suhail and his team on strategic studies such as
+                        'Understanding the Arab Digital Generation' and 'Arab Generation Divide' combined analytical
+                        rigor with forward-looking insights. The foresight generated through these studies was
+                        well-received policy makers and industry leaders across the region. Presenting the
+                        'Understanding the Arab Digital Generation' findings alongside Suhail at the ESOMAR conference
+                        in Dubai marked a particularly memorable milestone."</p>
                     <div class="testimonial-author">Hatem Samman</div>
                     <div class="testimonial-title">Former Director, Booz & Co</div>
                 </div>
@@ -1657,7 +2042,8 @@
     <section class="quote-banner">
         <div class="quote-banner-inner">
             <div class="quote-mark">&ldquo;</div>
-            <blockquote>To raise new questions, new possibilities, to regard old problems from a new angle, requires creative imagination and marks real advance in science.</blockquote>
+            <blockquote>To raise new questions, new possibilities, to regard old problems from a new angle, requires
+                creative imagination and marks real advance in science.</blockquote>
             <cite>— Albert Einstein</cite>
         </div>
     </section>
@@ -1728,7 +2114,8 @@
             <div class="footer-info">
                 <div class="footer-section">
                     <h4>Intel2Research</h4>
-                    <p>Powering business decisions through strategic insights, data narratives, and innovative research solutions.</p>
+                    <p>Powering business decisions through strategic insights, data narratives, and innovative research
+                        solutions.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -1757,7 +2144,7 @@
 
         // Forte Tabs
         document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const index = this.dataset.tab;
 
                 document.querySelectorAll('.tab-btn').forEach(b => {
@@ -1781,27 +2168,27 @@
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
         // Close menu when link is clicked
         document.querySelectorAll('#navMenu a').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
 
         // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
-            
+
             const submitBtn = document.querySelector('.submit-btn');
             const messageDiv = document.getElementById('formMessage');
             const originalText = submitBtn.textContent;
-            
+
             // Show loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="spinner"></span> Sending...';
@@ -1849,7 +2236,7 @@
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href !== '#' && document.querySelector(href)) {
                     e.preventDefault();
@@ -1864,9 +2251,9 @@
         // Form validation
         const form = document.getElementById('contactForm');
         const inputs = form.querySelectorAll('[required]');
-        
+
         inputs.forEach(input => {
-            input.addEventListener('blur', function() {
+            input.addEventListener('blur', function () {
                 if (!this.value.trim()) {
                     this.style.borderColor = '#dc3545';
                 } else {
@@ -1876,4 +2263,5 @@
         });
     </script>
 </body>
+
 </html>
